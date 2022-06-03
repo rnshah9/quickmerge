@@ -1,0 +1,7 @@
+project: quickmerge
+target: quickmerge
+image: ghcr.io/rnshah9/playground:quickmerge
+
+cmds:
+  - cmd: /repo/quickmerge -d /test.rq.delta -q /repo/MUMmer3.23/docs/web/examples/data/B_anthracis_Mslice.fasta -r /repo/MUMmer3.23/docs/web/examples/data/B_anthracis_Mslice.fasta -hco 5.0 -c 1.5 -l 1 -ml 2 -p prefix
+    filepath: /test.rq.delta

@@ -1,0 +1,10 @@
+FROM --platform=linux/amd64 ubuntu:22.04
+
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim less file locate && echo 'alias locate="updatedb && locate"' >> ~/.bashrc
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential
+
+COPY . /repo
+WORKDIR /repo
+RUN chmod +x make_merger.sh
+RUN ./make_merger.sh
